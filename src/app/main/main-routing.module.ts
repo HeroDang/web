@@ -7,6 +7,13 @@ import { RouterModule } from '@angular/router';
             {
                 path: '',
                 children: [
+                    
+                    {
+                        path: 'admin/peoples',
+                        loadChildren: () => import('./admin/peoples/people.module').then(m => m.PeopleModule),
+                        data: { permission: 'Pages.Peoples' }
+                    },
+                
                     {
                         path: 'dashboard',
                         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
